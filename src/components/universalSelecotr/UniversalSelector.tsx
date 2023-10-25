@@ -4,6 +4,9 @@ import SectionWithHeading from "../sectionWithHeading/SectionWithHeading";
 import Cube from "../cube/Cube";
 import style from "./style.module.css";
 import DescriptionQas from "../descriptionQas/DescriptionQas";
+import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
+import IconReset from "@/icons/Reset";
+import { AnimatePresence, motion } from "framer-motion";
 export default function UniversalSelector() {
   const [value, setValue] = useState(50);
   function hendelClickValue() {
@@ -14,19 +17,48 @@ export default function UniversalSelector() {
   }
 
   let ConfirmColor = value > 50 ? style.confirmColor : "";
+  let mainBlockColor = value > 50 ? style.bg__answer : style.bg__colorMain;
 
   return (
     <SectionWithHeading title="universal selector" headingLevel="h2">
-      <DescriptionQas>How select all elements?</DescriptionQas>
-      <button onClick={hendelClickValue}>inreac</button>
-      <button onClick={hendelClickReset}>reset</button>
+      <DescriptionQas>
+        How select all <span className={style.cube}> </span>?
+      </DescriptionQas>
+      <div className={style.btn__group}>
+        <button className={style.btn__button} onClick={hendelClickValue}>
+          select all
+        </button>
+        <button onClick={hendelClickReset} className={style.reset__btn}>
+          <VisuallyHidden>reset</VisuallyHidden>
+          <IconReset />
+        </button>
+      </div>
+      <div className={style.box}>
+        <AnimatePresence>
+          {value > 50 && (
+            <motion.code
+              className={style.code__box}
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{
+                opacity: 0,
+                x: -200,
+              }}
+              transition={{ opacity: { duration: 0.6 }, x: { duration: 1.2 } }}
+            >
+              <span className={style.cube}> </span> *&#123; background:
+              yellow;&#125;{" "}
+            </motion.code>
+          )}
+        </AnimatePresence>
+      </div>
       <div className={style.universal__group}>
         <div className={style.flex__group}>
           <Cube
             width={50}
             height={50}
             depth={50}
-            className={style.bg__colorMain}
+            className={mainBlockColor}
             cuboidClass={style.cuboid__animation}
           />
           <Cube
@@ -41,7 +73,7 @@ export default function UniversalSelector() {
             width={50}
             height={50}
             depth={50}
-            className={style.bg__colorMain}
+            className={mainBlockColor}
             cuboidClass={style.cuboid__animation}
           />
           <Cube
@@ -56,7 +88,7 @@ export default function UniversalSelector() {
             width={50}
             height={50}
             depth={50}
-            className={style.bg__colorMain}
+            className={mainBlockColor}
             cuboidClass={style.cuboid__animation}
           />
           <Cube
