@@ -15,6 +15,8 @@
     border: 1px solid black;
     position: absolute;
     transition: all 500ms ease;
+    display: grid;
+    place-items: center;
 }
 .cuboid__side:nth-of-type(1),
 .cuboid__side:nth-of-type(2){

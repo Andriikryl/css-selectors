@@ -9,6 +9,7 @@ interface CubeProps {
   depth: number;
   className?: string;
   cuboidClass?: string;
+  text?: string;
 }
 
 export default function Cube({
@@ -17,6 +18,7 @@ export default function Cube({
   depth,
   className,
   cuboidClass,
+  text,
 }: CubeProps) {
   return (
     <div
@@ -27,12 +29,12 @@ export default function Cube({
         "--depth": `${depth}px`,
       }}
     >
-      <div className={clsx(style.cuboid__side, className)}></div>
-      <div className={clsx(style.cuboid__side, className)}></div>
-      <div className={clsx(style.cuboid__side, className)}></div>
-      <div className={clsx(style.cuboid__side, className)}></div>
-      <div className={clsx(style.cuboid__side, className)}></div>
-      <div className={clsx(style.cuboid__side, className)}></div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
+      <div className={clsx(style.cuboid__side, className)}>{text}</div>
     </div>
   );
 }

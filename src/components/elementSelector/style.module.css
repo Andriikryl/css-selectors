@@ -17,6 +17,7 @@
 .bg__colorMain{
     background-color: hsl(199, 64%, 73%, .6);
     border: 1px solid white;
+    transform: matrix(0, 1, 1, 0, 0, 0);
 }
 .bg__colorSied{
     background-color: hsl(345, 100%, 85%, .6);
@@ -43,7 +44,8 @@
 
 
   .cube{
-    display: inline-block;
+    display: grid;
+    place-items: center;
     width: 40px;
     height: 40px;
     background-color: hsl(199, 64%, 73%, .8);
@@ -101,4 +103,18 @@
 
   .box{
     height: 80px;
+  }
+
+  .bg__colorSiedTwo{
+    background-color: hsl(17, 83%, 54%, .6);
+    border: 1px solid white;
+  }
+
+  .bg__colorSiedThree{
+    background-color: hsl(164, 95%, 43%, .6);
+    border: 1px solid white;
+  }
+  .bg__colorSiedFour{
+    background-color: hsl(271, 85%, 23%, .6);
+    border: 1px solid white;
   }
