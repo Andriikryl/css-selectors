@@ -1,0 +1,41 @@
+.universal__group{
+    padding-block: 200px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: end;
+}
+.flex__group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    perspective: 800px;
+}
+
+.bg__colorMain{
+    background-color: hsl(199, 64%, 73%, .6);
+    border: 1px solid white;
+}
+.bg__colorSied{
+    background-color: hsl(345, 100%, 85%, .6);
+    border: 1px solid white;
+}
+
+.confirmColor{
+    background-color: hsl(78, 51%, 56%, .6);
+    border: 1px solid white;
+}
+
+.cuboid__animation{
+    animation: spin2 10s infinite linear;
+}
+
+@keyframes spin2 {
+    0% {
+      transform: perspective(600px) rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+    }
+    100% {
+      transform: perspective(600px) rotateX(360deg) rotateY(630deg) rotateZ(0deg);
+    }
+  }
