@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import style from "./style.module.css";
 import clsx from "clsx";
 
@@ -10,6 +10,7 @@ interface CubeProps {
   className?: string;
   cuboidClass?: string;
   text?: string;
+  children?: ReactNode;
 }
 
 export default function Cube({
@@ -19,6 +20,7 @@ export default function Cube({
   className,
   cuboidClass,
   text,
+  children,
 }: CubeProps) {
   return (
     <div
@@ -29,6 +31,7 @@ export default function Cube({
         "--depth": `${depth}px`,
       }}
     >
+      {children}
       <div className={clsx(style.cuboid__side, className)}>{text}</div>
       <div className={clsx(style.cuboid__side, className)}>{text}</div>
       <div className={clsx(style.cuboid__side, className)}>{text}</div>

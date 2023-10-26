@@ -1,4 +1,5 @@
 import AdjacentSelector from "@/components/adjacentSelector/AdjacentSelector";
+import ChildSelector from "@/components/childSelector/ChildSelector";
 import ClassIdSelector from "@/components/classIdSelecor/ClassIdSelector";
 import DescendantSelector from "@/components/descendantSelector/DescendantSelector";
 import ElementSelector from "@/components/elementSelector/ElementSelector";
@@ -16,6 +17,7 @@ export default function Home() {
       <MultipleSelector />
       <DescendantSelector />
       <AdjacentSelector />
+      <ChildSelector />
     </>
   );
 }
