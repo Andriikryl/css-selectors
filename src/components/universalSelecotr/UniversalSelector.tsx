@@ -7,6 +7,7 @@ import DescriptionQas from "../descriptionQas/DescriptionQas";
 import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import IconReset from "@/icons/Reset";
 import { AnimatePresence, motion } from "framer-motion";
+import Faq from "../faq/Faq";
 export default function UniversalSelector() {
   const [value, setValue] = useState(50);
   function hendelClickValue() {
@@ -24,6 +25,7 @@ export default function UniversalSelector() {
       <DescriptionQas>
         How select all <span className={style.cube}> </span>?
       </DescriptionQas>
+      <Faq text="The universal selector is a special type selector and can therefore be namespaced when using @namespace. This is useful when dealing with documents containing multiple namespaces such as HTML with inline SVG or MathML, or XML that mixes multiple vocabularies." />
       <div className={style.btn__group}>
         <button className={style.btn__button} onClick={hendelClickValue}>
           select all

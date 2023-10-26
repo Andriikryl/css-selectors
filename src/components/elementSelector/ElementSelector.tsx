@@ -7,6 +7,7 @@ import DescriptionQas from "../descriptionQas/DescriptionQas";
 import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import IconReset from "@/icons/Reset";
 import { AnimatePresence, motion } from "framer-motion";
+import Faq from "../faq/Faq";
 
 export default function ElementSelector() {
   const [value, setValue] = useState(50);
@@ -25,6 +26,10 @@ export default function ElementSelector() {
       <DescriptionQas>
         How select <span className={style.cube}>p</span>?
       </DescriptionQas>
+      <Faq
+        text="This base selector selects the type of elements to which the rule will be applied.
+Syntax: element"
+      />
       <div className={style.btn__group}>
         <button className={style.btn__button} onClick={hendelClickValue}>
           select p
