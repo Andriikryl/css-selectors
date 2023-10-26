@@ -8,7 +8,8 @@ import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import IconReset from "@/icons/Reset";
 import { AnimatePresence, motion } from "framer-motion";
 import Faq from "../faq/Faq";
-export default function UniversalSelector() {
+
+export default function MultipleSelector() {
   const [value, setValue] = useState(50);
   function hendelClickValue() {
     setValue((prev) => (prev = 200));
@@ -19,16 +20,15 @@ export default function UniversalSelector() {
 
   let ConfirmColor = value > 50 ? style.confirmColor : "";
   let mainBlockColor = value > 50 ? style.bg__answer : style.bg__colorMain;
-
   return (
-    <SectionWithHeading title="universal selector" headingLevel="h2">
+    <SectionWithHeading title="multiple selectors" headingLevel="h2">
       <DescriptionQas>
-        How select all <span className={style.cube}></span>?
+        How select all <span className={style.cube}> .class.class-2</span>?
       </DescriptionQas>
-      <Faq text="The universal selector is a special type selector and can therefore be namespaced when using @namespace. This is useful when dealing with documents containing multiple namespaces such as HTML with inline SVG or MathML, or XML that mixes multiple vocabularies." />
+      <Faq text="Chain two or more classes or IDs to select the element(s) that have all the specified classes/IDs:" />
       <div className={style.btn__group}>
         <button className={style.btn__button} onClick={hendelClickValue}>
-          select all
+          select class.class-2
         </button>
         <button onClick={hendelClickReset} className={style.reset__btn}>
           <VisuallyHidden>reset</VisuallyHidden>
@@ -48,59 +48,15 @@ export default function UniversalSelector() {
               }}
               transition={{ opacity: { duration: 0.6 }, x: { duration: 1.2 } }}
             >
-              <span className={style.cube}> </span> *&#123; background:
-              yellow;&#125;{" "}
+              <span className={style.cube}> </span> .class.class-2&#123;
+              background: yellow;&#125;{" "}
             </motion.code>
           )}
         </AnimatePresence>
       </div>
       <div className={style.universal__group}>
         <div className={style.flex__group}>
-          <Cube
-            width={50}
-            height={50}
-            depth={50}
-            className={mainBlockColor}
-            cuboidClass={style.cuboid__animation}
-          />
-          <Cube
-            width={150}
-            height={value}
-            depth={150}
-            className={ConfirmColor}
-          />
-        </div>
-        <div className={style.flex__group}>
-          <Cube
-            width={50}
-            height={50}
-            depth={50}
-            className={mainBlockColor}
-            cuboidClass={style.cuboid__animation}
-          />
-          <Cube
-            width={150}
-            height={value}
-            depth={150}
-            className={ConfirmColor}
-          />
-        </div>
-        <div className={style.flex__group}>
-          <Cube
-            width={50}
-            height={50}
-            depth={50}
-            className={mainBlockColor}
-            cuboidClass={style.cuboid__animation}
-          />
-          <Cube
-            width={150}
-            height={value}
-            depth={150}
-            className={ConfirmColor}
-          />
-        </div>
-        <div className={style.flex__group}>
+          <span>#btn-color</span>
           <Cube
             width={50}
             height={50}
@@ -111,14 +67,30 @@ export default function UniversalSelector() {
           <Cube width={150} height={50} depth={150} />
         </div>
         <div className={style.flex__group}>
+          <span>.class-1</span>
           <Cube
             width={50}
             height={50}
             depth={50}
-            className={style.bg__colorSied}
             cuboidClass={style.cuboid__animation}
           />
           <Cube width={150} height={50} depth={150} />
+        </div>
+        <div className={style.flex__group}>
+          <span>.class.class-2</span>
+          <Cube
+            width={50}
+            height={50}
+            depth={50}
+            className={mainBlockColor}
+            cuboidClass={style.cuboid__animation}
+          />
+          <Cube
+            width={150}
+            height={value}
+            depth={150}
+            className={ConfirmColor}
+          />
         </div>
       </div>
     </SectionWithHeading>
