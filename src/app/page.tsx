@@ -1,4 +1,5 @@
 import ClassIdSelector from "@/components/classIdSelecor/ClassIdSelector";
+import DescendantSelector from "@/components/descendantSelector/DescendantSelector";
 import ElementSelector from "@/components/elementSelector/ElementSelector";
 import Hero from "@/components/hero/Hero";
 import MultipleSelector from "@/components/multipleSelecotr/MultipleSelector";
@@ -12,6 +13,7 @@ export default function Home() {
       <ElementSelector />
       <ClassIdSelector />
       <MultipleSelector />
+      <DescendantSelector />
     </>
   );
 }
