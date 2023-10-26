@@ -1,4 +1,5 @@
 import AdjacentSelector from "@/components/adjacentSelector/AdjacentSelector";
+import AttributeSelector from "@/components/attributeSelector/AttributeSelector";
 import ChildSelector from "@/components/childSelector/ChildSelector";
 import ClassIdSelector from "@/components/classIdSelecor/ClassIdSelector";
 import DescendantSelector from "@/components/descendantSelector/DescendantSelector";
@@ -20,6 +21,7 @@ export default function Home() {
       <AdjacentSelector />
       <ChildSelector />
       <GeneralSiblingSelector />
+      <AttributeSelector />
     </>
   );
 }
